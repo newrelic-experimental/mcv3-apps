@@ -8,7 +8,7 @@ builder.Services.AddControllers();
 
 var resourceBuilder = ResourceBuilder
     .CreateDefault()
-    .AddService("fibonacci-dotnet")
+    .AddService("fibonacci")
     .AddTelemetrySdk();
 
 builder.Services.AddOpenTelemetryTracing(tracerProviderBuilder =>
