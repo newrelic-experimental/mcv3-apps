@@ -9,3 +9,4 @@ services:
       OTEL_EXPORTER_OTLP_HEADERS: "api-key=${NEW_RELIC_API_KEY}"
   load-generator:
     build: ./load-generator
+

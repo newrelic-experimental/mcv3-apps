@@ -16,7 +16,8 @@ public class FibonacciController : ControllerBase
     {
         try
         {
-            return Ok(new {
+            return Ok(new
+            {
                 n = n,
                 result = Fibonacci(n)
             });
