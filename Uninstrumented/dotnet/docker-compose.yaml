@@ -1,7 +1,9 @@
 version: '3'
 services:
-  fibonacci-dotnet:
+  fibonacci:
     build: ./
     ports:
       - "8080:80"
+  load-generator:
+    build: ./load-generator
 
