@@ -1,0 +1,13 @@
+name: fibonacci
+version: 1.0.0
+
+authors:
+  - Kirk Haines <wyhaines@gmail.com>
+
+targets:
+  fibonacci:
+    main: src/fibonacci.cr
+
+crystal: 1.4.0
+
+license: MIT
