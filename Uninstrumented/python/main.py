@@ -20,9 +20,9 @@ def calcfib(x):
     except (ValueError, AssertionError) as e:
         raise ValueError("n must be between 1 and 90") from e
 
-    b, a = 0, 1  # b, a initialized as F(0), F(1)
+    a, b = 0, 1  # a, b initialized as F(0), F(1)
     for _ in range(1, x):
-        b, a = a, a + b  # b, a always store F(i-1), F(i)
+        a, b = b, a+b  # a, b always store F(i-1), F(i)
     return a
 
 if __name__ == "__main__":
