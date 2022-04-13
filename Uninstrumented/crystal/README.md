@@ -8,7 +8,7 @@ If the query appears to be malformed in any way, an error message is returned.
 
 A secondard tool, *load_generator*, is also included. When ran, it will loop, sending random queries to the Fibonacci API server and displaying the results.
 
-## Installation
+## Installation & Usage
 
 If you have Crystal installed on your system, you can compile and run these apps directly. If you do not have Crystal installed, you can find your operating system on the [Install](https://crystal-lang.org/install/) page of the Crystal web site, and follow the instructions. Alternatively, if you have docker available, a Dockerfile is provided to run the examples.
 

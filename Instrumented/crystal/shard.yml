@@ -1,0 +1,22 @@
+name: fibonacci
+version: 1.0.0
+
+authors:
+  - Kirk Haines <wyhaines@gmail.com>
+
+targets:
+  fibonacci:
+    main: src/fibonacci.cr
+
+crystal: 1.4.0
+
+license: MIT
+
+dependencies:
+  opentelemetry-instrumentation:
+    github: wyhaines/opentelemetry-instrumentation.cr
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 1.0.0
