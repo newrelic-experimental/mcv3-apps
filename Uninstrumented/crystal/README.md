@@ -1,27 +1,41 @@
 # fibonacci
 
-TODO: Write a description here
+This is a sample application which will be instrumented with OpenTelemetry. You can find the instrumented version [here](../../Instrumented/crystal).
+
+This example contains a very simple API server implemented with just the Crystal Standard Library. On any request, it looks for a query parameter *n* and, if that parameter exists, and is a positive number, the *nth* number in the Fibonacci Sequence will be calculated and returned. This
+
+If the query appears to be malformed in any way, an error message is returned.
+
+A secondard tool, *load_generator*, is also included. When ran, it will loop, sending random queries to the Fibonacci API server and displaying the results.
 
 ## Installation
 
-TODO: Write installation instructions here
+If you have Crystal installed on your system, you can compile and run these apps directly. If you do not have Crystal installed, you can find your operating system on the [Install](https://crystal-lang.org/install/) page of the Crystal web site, and follow the instructions. Alternatively, if you have docker available, a Dockerfile is provided to run the examples.
 
-## Usage
+If you are building and running the code manually, you can compile the server with the following command:
 
-TODO: Write usage instructions here
+```bash
+crystal build -p -s -t --release src/server.cr
+```
 
-## Development
+A *fibonacci* binary will be placed in your directory when the code finishes compiling.
 
-TODO: Write development instructions here
+To build the load generator, you can use:
 
-## Contributing
+```bash
+crystal build -p -s -t src/load_generator.cr
+```
 
-1. Fork it (<https://github.com/your-github-user/fibonacci/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Then, to run then, using two different shells, execute:
 
-## Contributors
+```bash
+./server
+```
 
-- [Kirk Haines](https://github.com/your-github-user) - creator and maintainer
+in one shell, and:
+
+```bash
+./load_generator
+```
+
+in the other.

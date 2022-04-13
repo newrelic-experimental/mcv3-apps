@@ -1,9 +1,14 @@
+require "./version"
 require "http/server"
 require "big/big_int"
 
 class Fibonacci
-  getter finished : Channel(Nil) = Channel(Nil).new
+  private getter finished : Channel(Nil) = Channel(Nil).new
 
+  # This implements an iterative solution to solving for a given
+  # fibonacci number. This function will also utilize BigInt, which
+  # is an arbitrary precision integer, if the answer will be too large
+  # to fit into a 64 bit Integer.
   def fibonacci(x)
     a, b = x > 93 ? {BigInt.new(0), BigInt.new(1)} : {0_u64, 1_u64}
 
@@ -13,6 +18,15 @@ class Fibonacci
     a
   end
 
+  # In this example, the HTTP server that handles fibonacci requests
+  # is spawned into it's own fiber. This example would work just fine
+  # if it were kept in the main thread, but this pattern can be useful
+  # in larger applications.
+  #
+  # This example could be much shorter, but it represents a more typical
+  # application pattern, with handlers for managing errors, for logging
+  # responses, and for automatically compressing the response, if the
+  # request allows for it in the *Accept-Encoding* header.
   def run
     spawn(name: "Fibonacci Server") do
       server = HTTP::Server.new([
@@ -41,9 +55,11 @@ class Fibonacci
     self
   end
 
+  # This is not strictly necessary, but in a larger application, one
+  # might want to have the main fiber wait for the fiber that is running
+  # the server to finish, and if it does so, cleanup resources. This
+  # pattern is a simple one to allow that.
   def wait
     finished.receive
   end
 end
-
-Fibonacci.new.run.wait
