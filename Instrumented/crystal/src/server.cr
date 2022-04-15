@@ -20,6 +20,8 @@ class Fibonacci
       span["fibonacci.n"] = x
       result = previous_def
       span["fibonacci.result"] = result.to_s
+
+      result
     end
   end
 end
