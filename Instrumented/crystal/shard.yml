@@ -15,6 +15,7 @@ license: MIT
 dependencies:
   opentelemetry-instrumentation:
     github: wyhaines/opentelemetry-instrumentation.cr
+    branch: main
 
 development_dependencies:
   ameba:

@@ -11,6 +11,11 @@ class Fibonacci
   # is an arbitrary precision integer, if the answer will be too large
   # to fit into a 64 bit Integer.
   def fibonacci(x)
+    if x > 39196
+      # The answer is too big to fit within data size limits for a span.
+      raise "Error. Fibonacci calculations greater than 39196 are disallowed because the answer is too large to fit into an OpenTelemetry span. The #{x} Fibonacci number was requested."
+    end
+
     a, b = x > 93 ? {BigInt.new(0), BigInt.new(1)} : {0_u64, 1_u64}
 
     (x - 1).times do
