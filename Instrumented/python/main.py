@@ -57,7 +57,7 @@ def calcfib(n):
 
         a, b = 0, 1  # a, b initialized as F(0), F(1)
         for _ in range(1, x):
-        a, b = b, a+b  # a, b always store F(i-1), F(i)
+            a, b = b, a+b  # a, b always store F(i-1), F(i)
 
         span.set_attribute("fibonacci.result", a)
         return a
