@@ -56,8 +56,8 @@ def calcfib(n):
             raise ValueError("n must be between 1 and 90") from e
 
         a, b = 0, 1  # a, b initialized as F(0), F(1)
-        for _ in range(1, x):
-        a, b = b, a+b  # a, b always store F(i-1), F(i)
+        for _ in range(1, n):
+            a, b = b, a+b  # a, b always store F(i-1), F(i)
 
         span.set_attribute("fibonacci.result", a)
         return a
