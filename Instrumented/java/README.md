@@ -14,7 +14,7 @@ docker build -t appathon-java . \
     --env OTEL_SERVICE_NAME=appathon-java \
     --env OTEL_RESOURCE_ATTRIBUTES=service.instance.id=6d1331ab-cfd3-4fff-9dfe-21e5cbfab49a \
     --env OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.nr-data.net:4317 \
-    --env OTEL_EXPORTER_OTLP_HEADERS=api-key=747d4704ef1bf95b94ff8f4e349f09583b3dNRAL \
+    --env OTEL_EXPORTER_OTLP_HEADERS=api-key=[INSERT LICENSE KEY] \
     --env OTEL_EXPORTER_OTLP_COMPRESSION=gzip \
     --env OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT=1000 \
     appathon-java
